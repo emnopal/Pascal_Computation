@@ -1,3 +1,25 @@
+{
+	Soal Persamaan Linear 5 Variabel
+
+	2x+4y+z+7u+v=9
+	7x+6y+9z+4v=8
+	4x+3y+4z+6u+7v=7
+	8x+7y+5z+3u+6v=6
+	9x+3z+u+9v=5
+
+	matriksnya adalah 
+	
+	[2,4,1,7,1][9]
+	[7,6,9,0,4][8]
+	[4,3,4,6,7][7]
+	[8,7,5,3,6][6]
+	[9,0,3,1,9][5]
+
+	diberikan persamaan diatas, 
+	selesaikan dengan menggunakan metode Gauss-Jordan!
+}
+
+
 program Gauss4x4;
 
 type

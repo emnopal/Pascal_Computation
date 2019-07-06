@@ -1,3 +1,7 @@
+// こんにちはみんな
+// これはガウス助教勉強します
+// ドぞよろしくね！
+
 program nxn_gauss_jordan;
 
 const
@@ -20,6 +24,8 @@ var
 	n : integer;
 	c : real;
 	error : boolean;
+
+// ここで尿力行列番号
 
 procedure input;
 	var
@@ -44,6 +50,7 @@ procedure input;
 	end;
 end;
 
+// ガウス消去行列
 
 procedure matrix;
 	var
@@ -88,6 +95,8 @@ procedure matrix;
 		end;
 		end;
 
+// 結果
+
 procedure result;
 	var i : byte;
 	begin
@@ -102,6 +111,8 @@ procedure result;
 					writeln('X',i,' = ',x.element[i]:6:2);
 				end;
 			end;
+
+// 出力
  
 begin
 	input;
