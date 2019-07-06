@@ -1,0 +1,112 @@
+program elim_gauss;
+
+const
+	max = 25;
+
+type
+	matrik = record
+	row, col : byte;
+	element : array [1..max, 1..max] of real;
+end;
+
+	vektor = record
+	row : byte;
+	element : array [1..max] of real;
+end;
+
+var
+	x, b : vektor;
+	A : matrik;
+	n : integer;
+	c : real;
+	error : boolean;
+
+// ここで尿力行列番号
+
+procedure 4x4;
+	var
+		i,j : byte;
+	begin
+		for i := 1 to 4 do
+				begin
+					writeln ('The ',i, ' Equation' );
+					for j := 1 to 4 do
+						begin
+							write ('X[',i,',',j,'] = ');
+							readln (A.element[i,j]);
+						end;
+					write('Y[',i,']   = '); readln(A.element[i,4+1]);
+			writeln;
+	end;
+end;
+
+// ガウス消去行列
+
+procedure matrix;
+	var
+		i,j,k : integer;
+		temp, S : real;
+	begin
+		error := false;
+		for i := 1 to n do
+			begin
+				if (A.element[i,i] = 0 ) then
+					begin
+						write(A.element[i,i]) ;
+						error := true;
+						exit;
+					end;
+				temp := A.element[i,i];
+				for k := 1 to n+1 do
+					begin
+						A.element[i,k] := A.element[i,k] / temp;
+					end;
+				for j := 1  to n do
+					begin
+						if(j<>i) then
+							begin
+								c := A.element[j,i];
+								for k := 1 to n+1 do
+									begin
+										A.element[j,k] := A.element [j,k] - (c * A.element[i,k]);
+									end;
+							end;
+			end;
+	end;
+	x.row := n;
+	for i := n downto 1 do
+		begin
+			if (A.element [i,i] = 0.0 ) then
+			begin
+				error := true;
+				exit;
+			end;
+			x.element[i] := A.element[i,n+1];
+		end;
+		end;
+
+// 結果
+
+procedure result;
+	var i : byte;
+	begin
+		if (error) then
+			begin
+				writeln ('Error');
+			end
+		else
+			begin
+				writeln ('Result : ');
+				for i := 1 to x.row do
+					writeln('X',i,' = ',x.element[i]:6:2);
+				end;
+			end;
+
+// Output
+ 
+begin
+	input;
+	matrix;
+	result;
+	readln;
+end.
